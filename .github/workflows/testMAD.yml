@@ -3,6 +3,7 @@ on:
   push:
     branches: [main, master]
     
+#Completed practical6
 jobs:
   build:
     runs-on: macos-latest
@@ -36,6 +37,7 @@ jobs:
 #           cd ..
 #           #cd  app/src/androidTest/java/sg/edu/np/mad/madpractical/
 #           #ls
+
           
       - name: Make gradlew executable
         run: chmod +x ./gradlew
