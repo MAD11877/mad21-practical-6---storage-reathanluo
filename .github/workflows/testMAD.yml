@@ -24,18 +24,18 @@ jobs:
         with:
           go-version: '1.13.7'
       
-      - name: Run Tests
-        run: |
-          UPATH=$(find . -path \*app/src/main/java/*/*.java | head -n 1 | sed 's_/[a-zA-Z0-9$]*[.]java__' | sed 's_./app/src/main/java/__' | sed 's_/_._g')
-          echo $UPATH
-          sed -i "" "s%sg.*[;]%$UPATH;%" testDirectory/*.java
-          head -1 testDirectory/*.java
-          cd testDirectory
-          ls
-          go run arrange.go
-          cd ..
-          #cd  app/src/androidTest/java/sg/edu/np/mad/madpractical/
-          #ls
+#       - name: Run Tests
+#         run: |
+#           UPATH=$(find . -path \*app/src/main/java/*/*.java | head -n 1 | sed 's_/[a-zA-Z0-9$]*[.]java__' | sed 's_./app/src/main/java/__' | sed 's_/_._g')
+#           echo $UPATH
+#           sed -i "" "s%sg.*[;]%$UPATH;%" testDirectory/*.java
+#           head -1 testDirectory/*.java
+#           cd testDirectory
+#           ls
+#           go run arrange.go
+#           cd ..
+#           #cd  app/src/androidTest/java/sg/edu/np/mad/madpractical/
+#           #ls
           
       - name: Make gradlew executable
         run: chmod +x ./gradlew
